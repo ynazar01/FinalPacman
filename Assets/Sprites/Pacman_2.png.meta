@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cca2e3669a241ae449509179b1088519
+guid: 90f51b69e9e8ece4ab522bca263567a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1928295896816474748
-    second: GreenGhost_1_0
+      213: 5673425292361074030
+    second: Pacman_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreenGhost_1_0
+      name: Pacman_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7ad69fc6eea2ca10800000000000000
-      internalID: 1928295896816474748
+      spriteID: e6506ea8e3e0cbe40800000000000000
+      internalID: 5673425292361074030
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GreenGhost_1_0: 1928295896816474748
+      Pacman_2_0: 5673425292361074030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
