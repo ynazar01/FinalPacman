@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    // Set the layer number for Pacman in the Inspector
-    public LayerMask pacmanLayer; // Updated to pacmanLayer instead of pacStudentLayer
+    public LayerMask pacmanLayer;
 
-    // This function is called when another object enters the pellet's trigger collider
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the object that entered the trigger is Pacman by checking its layer
@@ -15,9 +13,19 @@ public class Pellet : MonoBehaviour
         {
             // Pacman has collided with this pellet, so destroy the pellet
             Destroy(gameObject);
-            
-            // Optionally, trigger any additional logic like increasing score here
-            // GameManager.instance.AddScore(10); // Example of adding score
+
+            // Try to play pellet eating sound if available
+            PacStudentMovement pacStudentMovement = other.GetComponent<PacStudentMovement>();
+            if (pacStudentMovement != null)
+            {
+                pacStudentMovement.EatPellet();
+            }
+
+            // Notify the GameManager that a pellet has been eaten
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.PelletEaten();
+            }
         }
     }
 }

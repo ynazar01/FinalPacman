@@ -16,6 +16,13 @@ public class PowerPellet : MonoBehaviour
             // Pacman has collided with this power pellet, so destroy the power pellet
             Destroy(gameObject);
 
+            // Play the power pellet eating sound
+            PacStudentMovement pacStudentMovement = other.GetComponent<PacStudentMovement>();
+            if (pacStudentMovement != null)
+            {
+                pacStudentMovement.EatPowerPellet();
+            }
+
             // Optionally, trigger any additional logic like activating power mode here
             // GameManager.instance.ActivatePowerMode(); // Example of activating power-up mode
         }
