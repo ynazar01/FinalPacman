@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pellet : MonoBehaviour
 {
     // Set the layer number for Pacman in the Inspector
-    public LayerMask pacmanLayer; 
+    public LayerMask pacmanLayer; // Updated to pacmanLayer instead of pacStudentLayer
 
     // This function is called when another object enters the pellet's trigger collider
     private void OnTriggerEnter2D(Collider2D other)

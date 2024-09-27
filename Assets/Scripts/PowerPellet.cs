@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PowerPellet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Set the layer number for Pacman in the Inspector
+    public LayerMask pacmanLayer; // Field for Pacman layer
 
-    // Update is called once per frame
-    void Update()
+    // This function is called when another object enters the power pellet's trigger collider
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        // Check if the object that entered the trigger is Pacman by checking its layer
+        if (((1 << other.gameObject.layer) & pacmanLayer) != 0)
+        {
+            // Pacman has collided with this power pellet, so destroy the power pellet
+            Destroy(gameObject);
+
+            // Optionally, trigger any additional logic like activating power mode here
+            // GameManager.instance.ActivatePowerMode(); // Example of activating power-up mode
+        }
     }
 }

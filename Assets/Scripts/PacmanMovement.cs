@@ -71,4 +71,22 @@ public class PacStudentMovement : MonoBehaviour
         float angle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg; // Get the angle
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotate PacStudent
     }
+
+    // Method to teleport Pacman when entering a passage
+    public void TeleportTo(Vector2 newPosition, Vector2 newDirection)
+    {
+        // Move Pacman to the new position
+        transform.position = newPosition;
+
+        // Set the new direction for Pacman after teleporting
+        SetDirection(newDirection);
+    }
+
+    // Method to set Pacman's direction manually
+    public void SetDirection(Vector2 newDirection)
+    {
+        direction = newDirection;
+        nextDirection = newDirection;
+        RotatePacStudent(newDirection);  // Ensure Pacman faces the new direction
+    }
 }
